@@ -1,5 +1,6 @@
 package br.com.igovargas.app;
 
+import br.com.igovargas.factory.Car;
 import br.com.igovargas.factory.ContractFactory;
 import br.com.igovargas.factory.Customer;
 import br.com.igovargas.factory.Factory;
@@ -9,7 +10,8 @@ public class App {
     public static void main(String[] args) {
         Customer customer = new Customer("A", false);
         Factory factory = getFactory(customer);
-        factory.create(customer.getGradeRequest());
+        Car car = factory.create(customer.getGradeRequest());
+        car.startEngine();
     }
 
     private static Factory getFactory(Customer customer) {

@@ -1,10 +1,17 @@
 package br.com.igovargas.factory;
 
-public class NoContractFactory extends Factory {
+import br.com.igovargas.nccars.Golf;
+import br.com.igovargas.nccars.HB20;
 
+public class NoContractFactory extends Factory {
+   
     @Override
     Car retriveCar(String requestedGrade) {
-        return null;
+        if ("A".equals(requestedGrade)) {
+            return new Golf(140, "cheio", "preto");
+        } else {
+            return new HB20(110, "cheio", "cobre");
+        }
     }
 
 }
